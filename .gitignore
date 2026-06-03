@@ -1,0 +1,19 @@
+# Compiled files
+*.o
+*.exe
+*.out
+*.obj
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build directory
+build/
+cmake-build-*/
+
+# OS files
+.DS_Store
+Thumbs.db
