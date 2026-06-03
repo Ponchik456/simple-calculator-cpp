@@ -18,7 +18,7 @@
 
 ## Сборка
 
-
+```bash
 cd C:\calc
 mkdir build
 cd build
@@ -27,7 +27,9 @@ cmake --build . --config Release
 
 
 ## Запускаем калькулятор (из C:\calc\build)
+```bash
 .\Release\calculator.exe
 
 ## Запускаем тесты (из C:\calc\build)
+```bash
 .\Release\tests.exe
