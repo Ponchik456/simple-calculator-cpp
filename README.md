@@ -16,17 +16,18 @@
 - Компилятор с поддержкой C++11 (g++, clang++, MSVC)
 - CMake 3.10+ (опционально)
 
-## Сборка и запуск
+## Сборка
 
 
-```bash
-# Компиляция программы
-mkdir build && cd build
+cd C:\calc
+mkdir build
+cd build
 cmake ..
-make
+cmake --build . --config Release
 
-# Запуск
-./calculator
 
-# Запуск тестов
-./tests
+## Запускаем калькулятор (из C:\calc\build)
+.\Release\calculator.exe
+
+## Запускаем тесты (из C:\calc\build)
+.\Release\tests.exe
