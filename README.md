@@ -24,7 +24,7 @@ mkdir build
 cd build
 cmake ..
 cmake --build . --config Release
-
+```
 
 ## Запускаем калькулятор (из C:\calc\build)
 ```bash
