@@ -1,4 +1,4 @@
-#include "calculator.h"
+#include "../include/calculator.h"
 #include <stdexcept>
 #include <cmath>
 
@@ -18,14 +18,14 @@ double multiply(double a, double b) {
 
 double divide(double a, double b) {
     if (b == 0) {
-        throw std::invalid_argument("На 0 делить низя");
+        throw std::invalid_argument("Деление на ноль невозможно");
     }
     return a / b;
 }
 
 double power(double base, int exp) {
     if (exp < 0) {
-        throw std::invalid_argument("Степень отрицательная");
+        throw std::invalid_argument("Отрицательная степень не поддерживается (используйте 1/power)");
     }
     double result = 1.0;
     for (int i = 0; i < exp; ++i) {
@@ -34,12 +34,18 @@ double power(double base, int exp) {
     return result;
 }
 
+// Исправленный факториал с проверкой переполнения
 long long factorial(int n) {
     if (n < 0) {
-        throw std::invalid_argument("Факториал отрицательного числа, низя так");
+        throw std::invalid_argument("Факториал отрицательного числа не определен");
     }
+    
     long long result = 1;
     for (int i = 2; i <= n; ++i) {
+        // Проверка на переполнение
+        if (result > LLONG_MAX / i) {
+            throw std::overflow_error("Переполнение при вычислении факториала (результат слишком большой)");
+        }
         result *= i;
     }
     return result;
@@ -57,4 +63,4 @@ bool isPrime(int n) {
     return true;
 }
 
-}
+} // namespace calc
